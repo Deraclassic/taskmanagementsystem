@@ -32,7 +32,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 
 ### 1. User Service
 
-![monorepo](images/taskuserservice.png)
+
 
 - **Port**: `5001`
 - **Dependencies**:
@@ -41,6 +41,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
     - **Spring Web**: Provides necessary functionality to build RESTful web services.
     - **Spring Boot Starter Data JPA**: Simplifies data access using Java Persistence API (JPA).
     - **MySQL Driver**: Enables communication between the application and the MySQL database.
+    - ![monorepo](images/taskuserservice.png)
 ---
 
 ![monorepo](images/userservicestructure.png)
