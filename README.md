@@ -44,7 +44,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
     - ![monorepo](images/taskuserservice.png)
 ---
 
-![monorepo](images/userservicestructure.png)
+
 
 - **Entities**:
     - **User**: Represents a user in the system.
@@ -52,6 +52,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 - **Controllers**:
     - **AuthController**: Manages user signup and login with JWT authentication.
     - **UserController**: Provides endpoints to retrieve user profiles and a list of all users.
+    - ![monorepo](images/userservicestructure.png)
 
 
 - **Endpoints**:
