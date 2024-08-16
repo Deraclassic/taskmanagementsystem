@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: task-route
+          uri: http://localhost:5002/tasks
+          predicates:
+            - Path=/tasks/**
+        - id: user-route
+          uri: http://localhost:5001/users
+          predicates:
+            - Path=/users/**
+        - id: auth-route
+          uri: http://localhost:5001/auth
+          predicates:
+            - Path=/auth/**
