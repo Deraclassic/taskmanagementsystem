@@ -31,6 +31,9 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 ## Services Overview
 
 ### 1. User Service
+
+![monorepo](images/taskuserservice.png)
+
 - **Port**: `5001`
 - **Dependencies**:
     - **Spring Security**: Secures the application with JWT authentication.
@@ -38,6 +41,9 @@ This is a task management microservices system built with Java 17, Spring Boot, 
     - **Spring Web**: Provides necessary functionality to build RESTful web services.
     - **Spring Boot Starter Data JPA**: Simplifies data access using Java Persistence API (JPA).
     - **MySQL Driver**: Enables communication between the application and the MySQL database.
+---
+
+![monorepo](images/userservicestructure.png)
 
 - **Entities**:
     - **User**: Represents a user in the system.
@@ -46,19 +52,27 @@ This is a task management microservices system built with Java 17, Spring Boot, 
     - **AuthController**: Manages user signup and login with JWT authentication.
     - **UserController**: Provides endpoints to retrieve user profiles and a list of all users.
 
+
 - **Endpoints**:
     - `POST /auth/signup`: Signup a new user.
     - `POST /auth/login`: Login a user and obtain a JWT.
     - `GET /user/profile`: Retrieve the profile of the logged-in user.
     - `GET /user/all`: Retrieve a list of all users.
 
+![Screenshot 2024-08-16 110350.png](images/postmanlogin.png)
+---
 - **Configuration**:
     - Configured to run on a custom server port `5001` using `application.yml`.
 
 ### 2. Task Service
+
+![Screenshot 2024-08-16 110350.png](images/taskservice.png)
 - **Port**: `5002`
 - **Dependencies**:
-    - **Spring Web**: Used to create RESTful web services.
+
+![Screenshot 2024-08-13 185501.png](images/taskservicedependencies.png)
+    
+- **Spring Web**: Used to create RESTful web services.
     - **Spring Boot DevTools**: Provides automatic restarts and live reload features for development.
     - **Lombok**: Reduces boilerplate code by generating common methods.
     - **Eureka Client**: Registers the service with the Eureka Server for discovery.
@@ -73,7 +87,9 @@ This is a task management microservices system built with Java 17, Spring Boot, 
     - **TaskController**: Manages CRUD operations for tasks.
 
 - **Endpoints**:
-    - `POST /tasks`: Create a new task.
+    - `POST /tasks`: Create a new task (Only admins can create task. The roles are extracted from the JWT. This is achieved by communicating with the User Service using Open Feign Client).
+![Screenshot 2024-08-16 114736.png](images/openfeign.png)
+  
     - `GET /tasks/{id}`: Retrieve a task by ID.
     - `PUT /tasks/{id}`: Update a task by ID.
     - `DELETE /tasks/{id}`: Delete a task by ID.
@@ -85,16 +101,20 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 ### 3. Eureka Server
 - **Port**: `8070`
 - **Dependencies**:
+- ![Screenshot 2024-08-14 125048.png](images/eurekadependies.png)
     - **Eureka Server Spring Cloud Discovery**: Manages service registration and discovery.
     - **Spring Boot Actuator**: Provides production-ready monitoring and management capabilities.
 
 - **Configuration**:
     - The Eureka Server is configured to run on port `8070` and allows all services to register and discover each other.
+    - ![Screenshot 2024-08-16 115513.png](images/eureka.png)
 
 ### 4. Gateway
 - **Port**: `8080`
 - **Dependencies**:
     - **Spring Cloud Gateway**: Provides a simple, yet effective way to route API requests to the appropriate services.
+  
+    - ![gateway](images/gatewaydependencies%20(1).png)
 
 - **Configuration**:
     - Configured with routes for `UserController`, `AuthController`, and `TaskController`.
