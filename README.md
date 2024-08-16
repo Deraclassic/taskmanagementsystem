@@ -1,6 +1,7 @@
 
 
 # Task Management Microservices System
+![monorepo](images/erd.png)
 
 ## Overview
 This is a task management microservices system built with Java 17, Spring Boot, and Maven. The system consists of two main services: **User Service** and **Task Service**, along with a **Gateway** for routing and an **Eureka Server** for service discovery. The project is organized using a **mono repo approach**, where all microservices, the registry, and the gateway are contained within a single repository and folder structure for Unified Version Control, Easier Refactoring, Shared Code and Libraries and Consistent Development Environment. All services are documented and tested using Postman.
