@@ -7,7 +7,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 
 
 ---
-![monorepo](images/monorepo%20(1).png)
+![monorepo](images/mymonorepo.png)
 
 ## Architecture
 - **User Service**: Handles user authentication and profile management.
@@ -116,9 +116,10 @@ This is a task management microservices system built with Java 17, Spring Boot, 
   
     - ![gateway](images/gatewaydependencies%20(1).png)
 
-- **Configuration**:
+- **Configuration**: Using `application.yml`
     - Configured with routes for `UserController`, `AuthController`, and `TaskController`.
     - Routes are defined with an ID, URI, and predicate for each controller.
+    - ![Screenshot 2024-08-16 120309.png](images/gatewayconfig.png)
 
 ## Communication
 - **OpenFeign Client**: Services communicate with each other using the OpenFeign Client, simplifying HTTP requests between microservices.
@@ -130,6 +131,29 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 - Maven
 - MySQL
 - IntelliJ IDEA
+
+### Cloning the Repository
+
+Before running the services, you need to clone the repository from Git. Follow these steps:
+
+1. Open your terminal or command prompt.
+
+2. Navigate to the directory where you want to clone the project.
+
+3. Run the following command to clone the repository:
+
+   ```bash
+   git clone `https://github.com/Deraclassic/TaskBoardMicroservicesApp`
+   ```
+
+4. Navigate into the cloned repository:
+
+   ```bash
+   cd TaskManagementMicroServiesApp
+   ```
+
+  
+
 
 ### Running the Services
 1. **Eureka Server**:
@@ -152,12 +176,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 - All endpoints are documented and can be tested using Postman. Ensure that the Eureka Server and all services are running before executing API requests.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENCE) file for details.
 
-## Authors
-- [Your Name] - Initial work on the Task Management Microservices System
-
----
-
-Feel free to customize this README to suit your project's needs.
-
+## Contact
+- For Any enquiries, contact Chidera Uzoigwe on chiderauzoigwe2@gmail.com.
