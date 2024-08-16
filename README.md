@@ -118,7 +118,8 @@ This is a task management microservices system built with Java 17, Spring Boot, 
   
     - ![gateway](images/gatewaydependencies%20(1).png)
 
-- **Configuration**: Using `application.yml`
+- **Configuration**: Declarative Configuration was used for Gateway configuration.
+  This approach the routes and other configurations for the gateway using configuration files. This method is straightforward and involves setting up your gateway application with YAML or properties files. I used `application.yml`.
     - Configured with routes for `UserController`, `AuthController`, and `TaskController`.
     - Routes are defined with an ID, URI, and predicate for each controller.
     - ![Screenshot 2024-08-16 120309.png](images/gatewayconfig.png)
@@ -182,3 +183,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENCE) file
 
 ## Contact
 - For Any enquiries, contact Chidera Uzoigwe on chiderauzoigwe2@gmail.com.
+
+## Author
+Chidera Cynthia Uzoigwe.
