@@ -41,6 +41,7 @@ This is a task management microservices system built with Java 17, Spring Boot, 
     - **Lombok**: Reduces boilerplate code by generating getters, setters, and other common methods.
     - **Eureka Client**: Registers the service with the Eureka Server for discovery.
     - **Spring Web**: Provides necessary functionality to build RESTful web services.
+    - **Spring Boot DevTools**: Provides automatic restarts and live reload features for development.
     - **Spring Boot Starter Data JPA**: Simplifies data access using Java Persistence API (JPA).
     - **MySQL Driver**: Enables communication between the application and the MySQL database.
     - ![monorepo](images/taskuserservice.png)
