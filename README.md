@@ -68,7 +68,6 @@ This is a task management microservices system built with Java 17, Spring Boot, 
 
 ### 2. Task Service
 
-![Screenshot 2024-08-16 110350.png](images/taskservice.png)
 - **Port**: `5002`
 - **Dependencies**:
 
