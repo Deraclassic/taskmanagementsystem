@@ -1,6 +1,7 @@
 package com.dera.task.user.service.controller;
 
 import com.dera.task.user.service.model.User;
+import com.dera.task.user.service.request.UserProfileUpdateRequest;
 import com.dera.task.user.service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -34,5 +35,17 @@ public class UserController {
             @RequestParam("file") MultipartFile profilePicture) {
         // Delegate the task to the service layer
         return userService.uploadProfilePicture(profilePicture, email);
+    }
+
+    @PatchMapping("/{userId}/profile")
+    public ResponseEntity<String> updateUserProfile(
+            @PathVariable Long userId,
+            @RequestBody UserProfileUpdateRequest updateRequest) {
+        try {
+            userService.updateUserProfile(userId, updateRequest);
+            return ResponseEntity.ok("User profile updated successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Failed to update user profile");
+        }
     }
 }

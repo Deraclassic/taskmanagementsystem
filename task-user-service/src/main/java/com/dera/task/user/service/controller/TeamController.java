@@ -32,7 +32,6 @@ public class TeamController {
         return ResponseEntity.ok(team);
     }
 
-
     @PostMapping("/{teamId}/assign-user")
     public ResponseEntity<String> assignUserToTeam(@PathVariable Long teamId, @RequestParam Long userId) {
         teamService.assignUserToTeam(teamId, userId);

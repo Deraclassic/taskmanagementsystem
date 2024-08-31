@@ -49,6 +49,6 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public Set<User> getTeamMembers(Long teamId) {
         Team team = teamRepository.findById(teamId).orElseThrow(() -> new ResourceNotFoundException("Team not found"));
-        return team.getUsers(); // Ensure this list is correctly populated
+        return team.getUsers();
     }
 }
