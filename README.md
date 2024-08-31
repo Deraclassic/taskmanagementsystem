@@ -49,7 +49,7 @@ This is a user management module built with Java 17, Spring Boot, and Maven. The
 - **Controllers**:
     - **AuthController**: Manages user signup and login with JWT authentication.
     - **UserController**: Provides endpoints to retrieve user profiles and a list of all users.
-      ![monorepo](images/userservicestructure.png)
+      
 
 - **Endpoints**:
     - `POST /auth/signup`: Signup a new user.
