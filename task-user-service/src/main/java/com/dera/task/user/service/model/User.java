@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,4 +21,7 @@ public class User {
     private String role;
     private String fullName;
     private String profilePicture;
+
+    @ManyToMany(mappedBy = "users")
+    private Set<Team> teams;
 }

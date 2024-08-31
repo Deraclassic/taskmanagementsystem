@@ -1,8 +1,10 @@
-package com.dera.task.user.service.service;
+package com.dera.task.user.service.service.impl;
 
 import com.dera.task.user.service.config.JwtProvider;
 import com.dera.task.user.service.model.User;
 import com.dera.task.user.service.repository.UserRepository;
+import com.dera.task.user.service.service.FileUploadService;
+import com.dera.task.user.service.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

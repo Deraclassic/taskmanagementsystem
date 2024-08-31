@@ -1,4 +1,4 @@
-package com.dera.task.user.service.service;
+package com.dera.task.user.service.service.impl;
 
 import com.dera.task.user.service.model.User;
 import com.dera.task.user.service.repository.UserRepository;

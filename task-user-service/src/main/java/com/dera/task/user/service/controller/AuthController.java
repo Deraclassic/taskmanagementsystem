@@ -5,7 +5,7 @@ import com.dera.task.user.service.model.User;
 import com.dera.task.user.service.repository.UserRepository;
 import com.dera.task.user.service.request.LoginRequest;
 import com.dera.task.user.service.response.AuthResponse;
-import com.dera.task.user.service.service.CustomUserServiceImpl;
+import com.dera.task.user.service.service.impl.CustomUserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
