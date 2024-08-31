@@ -9,7 +9,7 @@
 ### Overview
 This is a user management module built with Java 17, Spring Boot, and Maven. The system includes a **User Service** for user management, a **Gateway** for routing, and an **Eureka Server** for service discovery. The project is organized using a **mono repo approach**, where all microservices, the registry, and the gateway are contained within a single repository and folder structure for Unified Version Control, Easier Refactoring, Shared Code and Libraries, and Consistent Development Environment. All services are documented and tested using Postman.
 
-![monorepo](images/Screenshot%202024-08-31%20122103.png)
+![myrepo](images/myrepo.png)
 
 ## Architecture
 - **User Service**: Handles user authentication, profile management, and profile picture uploads.
@@ -142,6 +142,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 Chidera Cynthia Uzoigwe.
+
+
+## Notification Service
+
+### Overview
 
 ---
 
