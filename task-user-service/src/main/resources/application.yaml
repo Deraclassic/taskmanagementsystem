@@ -10,8 +10,8 @@ spring:
       ddl-auto: update
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/yt_task_user_service
-    username: root
-    password: 08033468393dad
+    username: ${USERNAME}
+    password: ${PASSWORD}
     driver-class-name: com.mysql.jdbc.Driver
 eureka:
   client:
@@ -19,3 +19,9 @@ eureka:
     register-with-eureka: true
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
+
+cloudinary:
+  name: ddkkrlobj
+  api:
+    key: ${API_KEY}
+    secret: ${API_SECRET}
