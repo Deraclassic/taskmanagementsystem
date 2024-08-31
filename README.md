@@ -41,7 +41,7 @@ This is a user management module built with Java 17, Spring Boot, and Maven. The
     - **Spring Boot DevTools**: Provides automatic restarts and live reload features for development.
     - **Spring Boot Starter Data JPA**: Simplifies data access using Java Persistence API (JPA).
     - **MySQL Driver**: Enables communication between the application and the MySQL database.
-      ![monorepo](images/userservice.png)
+      ![monorepo](images/taskuserservice.png)
 
 - **Entities**:
     - **User**: Represents a user in the system.
