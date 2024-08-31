@@ -4,9 +4,10 @@ import com.dera.task.user.service.model.Team;
 import com.dera.task.user.service.model.User;
 
 import java.util.List;
+import java.util.Set;
 
 public interface TeamService {
-    Team createTeam(String teamName);
+    Team createTeam(String teamName, String requesterRole);
     void assignUserToTeam(Long teamId, Long userId);
-    List<User> getTeamMembers(Long teamId);
+    Set<User> getTeamMembers(Long teamId);
 }
