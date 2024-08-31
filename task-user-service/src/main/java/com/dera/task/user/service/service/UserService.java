@@ -14,4 +14,5 @@ public interface UserService {
     public List<User> getAllUsers();
     public ResponseEntity<String> uploadProfilePicture(MultipartFile profilePicture, String userEmail);
     void updateUserProfile(Long userId, UserProfileUpdateRequest updateRequest) throws Exception;
+    void deleteUser(Long userId) throws Exception;
 }

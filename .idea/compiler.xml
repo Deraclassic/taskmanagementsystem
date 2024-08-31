@@ -9,10 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="task-user-service" />
         <module name="eureka-server" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="gateway" target="17" />
       <module name="task-service" target="17" />
     </bytecodeTargetLevel>
   </component>

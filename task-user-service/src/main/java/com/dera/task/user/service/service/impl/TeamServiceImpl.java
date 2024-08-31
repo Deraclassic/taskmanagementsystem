@@ -23,13 +23,21 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public Team createTeam(String teamName, String requesterRole) {
-        if(!requesterRole.equals("ROLE_ADMIN")) {
-            throw new BadRequestException("Only admins can create teams");
+        // Log incoming parameters for debugging
+        System.out.println("Creating team with name: " + teamName);
+        System.out.println("Requester role: " + requesterRole);
+
+        // Validate role
+        if (!"ROLE_ADMIN".equals(requesterRole)) {
+            throw new IllegalArgumentException("Only admins can create teams");
         }
+
+        // Create and save the team
         Team team = new Team();
         team.setName(teamName);
         return teamRepository.save(team);
     }
+
     @Override
     public void assignUserToTeam(Long teamId, Long userId) {
         Optional<Team> teamOptional = teamRepository.findById(teamId);

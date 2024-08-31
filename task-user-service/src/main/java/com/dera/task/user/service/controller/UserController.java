@@ -1,5 +1,6 @@
 package com.dera.task.user.service.controller;
 
+import com.dera.task.user.service.exceptions.ResourceNotFoundException;
 import com.dera.task.user.service.model.User;
 import com.dera.task.user.service.request.UserProfileUpdateRequest;
 import com.dera.task.user.service.service.UserService;
@@ -46,6 +47,18 @@ public class UserController {
             return ResponseEntity.ok("User profile updated successfully");
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Failed to update user profile");
+        }
+    }
+
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long userId) {
+        try {
+            userService.deleteUser(userId);
+            return ResponseEntity.ok("User deleted successfully");
+        } catch (ResourceNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete user");
         }
     }
 }

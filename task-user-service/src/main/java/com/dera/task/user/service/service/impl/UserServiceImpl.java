@@ -64,10 +64,15 @@ public class UserServiceImpl implements UserService {
         if(updateRequest.getPassword() != null){
             user.setPassword(updateRequest.getPassword());
         }
-        if (updateRequest.getProfilePicture() != null) {
-            user.setProfilePicture(updateRequest.getProfilePicture());
-        }
-
         userRepository.save(user);
+    }
+
+    @Transactional
+    @Override
+    public void deleteUser(Long userId) throws Exception {
+        if (!userRepository.existsById(userId)) {
+            throw new ResourceNotFoundException("User not found");
+        }
+        userRepository.deleteById(userId);
     }
 }
