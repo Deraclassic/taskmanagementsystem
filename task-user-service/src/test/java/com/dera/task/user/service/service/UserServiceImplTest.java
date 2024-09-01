@@ -158,4 +158,39 @@ public class UserServiceImplTest {
                 .isInstanceOf(ResourceNotFoundException.class)
                 .hasMessage("User not found");
     }
+
+    @Test
+    void testGetUserById_UserExists() {
+        // Arrange
+        Long userId = 1L;
+
+        when(userRepository.existsById(userId)).thenReturn(true);
+        when(userRepository.findById(userId)).thenReturn(Optional.of(user));
+
+        // Act
+        User result = userService.getUserById(userId);
+
+        // Assert
+        assertThat(result).isNotNull();
+        assertThat(result.getId()).isEqualTo(userId);
+        assertThat(result.getEmail()).isEqualTo("test@example.com");
+        verify(userRepository, times(1)).existsById(userId);
+        verify(userRepository, times(1)).findById(userId);
+    }
+
+    @Test
+    void testGetUserById_UserDoesNotExist() {
+        // Arrange
+        Long userId = 1L;
+
+        when(userRepository.existsById(userId)).thenReturn(false);
+
+        // Act & Assert
+        assertThatThrownBy(() -> userService.getUserById(userId))
+            .isInstanceOf(ResourceNotFoundException.class)
+            .hasMessage("User not found");
+
+        verify(userRepository, times(1)).existsById(userId);
+        verify(userRepository, never()).findById(anyLong());
+    }
 }
