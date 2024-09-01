@@ -30,6 +30,11 @@ public class UserController {
         List<User> users = userService.getAllUsers();
         return new ResponseEntity<> (users, HttpStatus.OK);
     }
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable Long userId) {
+        User user = userService.getUserById(userId);
+        return new ResponseEntity<> (user, HttpStatus.OK);
+    }
     @PostMapping("/upload-profile-picture")
     public ResponseEntity<String> uploadProfilePicture(
             @RequestParam("email") String email,
